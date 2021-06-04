@@ -17,17 +17,18 @@ public class Placement : MonoBehaviour
         currentBox = this.GetComponentInParent<BoxStatus>();
     }
     // if user gets close to this place adds the current object  to object list
- 
 
 
-    private void OnTriggerStay(Collider other)
+
+    private void OnTriggerEnter(Collider other)
     {
         Debug.Log("Entered Trigger:" + other.gameObject.name);
-        if (other.gameObject.tag == Enums.TagNames.Items.ToString() && this.GetComponentInChildren<Item>()==null) // is this an Item and this point has no Item
+        if (other.gameObject.tag == Enums.TagNames.Items.ToString() && this.GetComponentInChildren<Item>() == null) // is this an Item and this point has no Item
         {
 
             currentBox.AddObject(other.gameObject);
             other.gameObject.transform.SetParent(transform);
+            other.gameObject.transform.Translate(new Vector3(0, 1, 0));
         }
 
     }
@@ -36,10 +37,11 @@ public class Placement : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         Debug.Log("Leaved Trigger:" + other.gameObject.name);
-        if (other.gameObject.tag==Enums.TagNames.Items.ToString()) // is this an Item
+        if (other.gameObject.tag == Enums.TagNames.Items.ToString()) // is this an Item
         {
             currentBox.RemoveObject(other.gameObject);
             other.gameObject.transform.SetParent(null);
+
 
         }
     }

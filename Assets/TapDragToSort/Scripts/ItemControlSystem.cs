@@ -69,9 +69,14 @@ public class ItemControlSystem : MonoBehaviour
         Debug.Log(Layer);
         if (Physics.Raycast(ray.origin, ray.direction * 10, out hit, 1<< Layer)) // only Items Layer
         {
+            if (!hit.collider.gameObject.GetComponent<Item>().completedMovement)
+            {
+                target = hit.collider.gameObject;
+
+                Debug.Log(LayerMask.LayerToName(target.layer) + "Selected Object Layer");
+                Debug.Log(target.name);
+            }
             
-            target = hit.collider.gameObject;
-            Debug.Log(target.name);
         }
         return target;
     }

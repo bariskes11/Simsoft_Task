@@ -4,7 +4,7 @@ using UnityEngine;
 // only to point out Item objects
 public class Item : MonoBehaviour
 {
-    
-  
+
+    public bool completedMovement=false;
 
 }
