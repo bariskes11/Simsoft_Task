@@ -14,8 +14,10 @@ public class BoxStatus : MonoBehaviour
     public List<GameObject> m_AddedObjects = new List<GameObject>();
     //get if this box is completed
     public bool CompletedThisBox;
+    public GameManager gm;
     private void Start()
     {
+        gm = FindObjectOfType<GameManager>();
         // sets current added objects on this box
         CompletedThisBox = false;
         var rslt = this.GetComponentsInChildren<Item>();
@@ -40,8 +42,8 @@ public class BoxStatus : MonoBehaviour
         foreach (var item in childs)
         {
             item.completedMovement = true;
-
         }
+        gm.SetBoxLeft();
     }
     private void CheckIfRowCollected()
     {
