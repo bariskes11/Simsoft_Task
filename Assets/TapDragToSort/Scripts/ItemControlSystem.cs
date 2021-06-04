@@ -13,24 +13,18 @@ public class ItemControlSystem : MonoBehaviour
     //to convert world to screen point.
     Vector3 positionOfScreen;
     //keeping "y" at same value for  staying on platform.
-    private float offsetY = 1F;
-
-    [Tooltip("Shows Possible Placement Points")]
-    public GameObject[] PossibleLandingPoints;
-    [Tooltip("To Indicate Landing Points with different Color")] 
-    public Material LandingPointInticatorColor;
-    [Tooltip("Normal Landing Place PointColor")]
-    public Material LandingPointNormalColor;
+    private float m_offsetY = 1F;
+    public float MinDistanceToLand = 3F;
 
     // Use this for initialization
     void Start()
     {
-        PossibleLandingPoints = GameObject.FindGameObjectsWithTag(Enums.TagNames.LandingPoint.ToString());
-        foreach (var item in PossibleLandingPoints)
-        {
-            item.GetComponent<MeshRenderer>().material = LandingPointNormalColor;
-        }
+        
     }
+
+
+
+
 
     RaycastHit hitInfo;
     void Update()
@@ -60,7 +54,7 @@ public class ItemControlSystem : MonoBehaviour
             Vector3 currentScreenSpace = new Vector3(Input.mousePosition.x, Input.mousePosition.y, positionOfScreen.z);
             Vector3 currentPosition = Camera.main.ScreenToWorldPoint(currentScreenSpace);
 
-            currentPosition.y = offsetY;
+            currentPosition.y = m_offsetY;
             //It will update target gameobject's current postion.
             SelectedGameObject.transform.position = currentPosition;
         }

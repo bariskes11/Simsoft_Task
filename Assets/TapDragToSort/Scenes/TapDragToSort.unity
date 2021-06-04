@@ -790,6 +790,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 313244194645648462, guid: 6f1b9e46118cbf44e943ff5691ad9be9,
+        type: 3}
+      propertyPath: CorrectObjectName
+      value: Green
+      objectReference: {fileID: 0}
     - target: {fileID: 3841733750291530623, guid: 6f1b9e46118cbf44e943ff5691ad9be9,
         type: 3}
       propertyPath: m_Name
@@ -1096,6 +1101,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 313244194645648462, guid: 6f1b9e46118cbf44e943ff5691ad9be9,
+        type: 3}
+      propertyPath: CorrectObjectName
+      value: Red
+      objectReference: {fileID: 0}
     - target: {fileID: 3841733750291530623, guid: 6f1b9e46118cbf44e943ff5691ad9be9,
         type: 3}
       propertyPath: m_Name
@@ -1450,6 +1460,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3517229130140209781, guid: 1904bb2ed5069d2468170a9634a54a9e,
+        type: 3}
+      propertyPath: LandingPointInticatorColor
+      value: 
+      objectReference: {fileID: 2100000, guid: 0ce2afe215190ed49992bec0b145df8f, type: 2}
+    - target: {fileID: 3517229130140209781, guid: 1904bb2ed5069d2468170a9634a54a9e,
+        type: 3}
+      propertyPath: LandingPointNormalColor
+      value: 
+      objectReference: {fileID: 2100000, guid: b874fcb4176d05b479e27abc3ce1175f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1904bb2ed5069d2468170a9634a54a9e, type: 3}
 --- !u!1001 &6770900654597835042
@@ -1543,6 +1563,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 313244194645648462, guid: 6f1b9e46118cbf44e943ff5691ad9be9,
+        type: 3}
+      propertyPath: CorrectObjectName
+      value: Blue
+      objectReference: {fileID: 0}
     - target: {fileID: 3841733750291530623, guid: 6f1b9e46118cbf44e943ff5691ad9be9,
         type: 3}
       propertyPath: m_Name
