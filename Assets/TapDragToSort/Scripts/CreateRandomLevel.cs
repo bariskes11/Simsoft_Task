@@ -9,7 +9,7 @@ public class CreateRandomLevel : MonoBehaviour
     public GameObject[] ObjectTypes;
     // totalboxCount in the game
     [Tooltip("total Box Count in the game")]
-    public int boxCount;
+    public int BoxCount;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,7 +21,10 @@ public class CreateRandomLevel : MonoBehaviour
             return;
         }
 
+        foreach (var item in ObjectTypes)
+        {
 
+        }
     }
 
    
