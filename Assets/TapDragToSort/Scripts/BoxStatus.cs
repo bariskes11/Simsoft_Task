@@ -31,6 +31,8 @@ public class BoxStatus : MonoBehaviour
     private void CheckIfRowCollected()
     {
         bool boxCompleted = true;
+        if (m_AddedObjects.Count != 4)
+            return;
         foreach (var item in m_AddedObjects)
         {
             if (item.name != CorrectObjectName)
@@ -53,7 +55,7 @@ public class BoxStatus : MonoBehaviour
 
     public void AddObject(GameObject gmObj)
     {
-        if (string.IsNullOrEmpty(CorrectObjectName) && m_AddedObjects.Count<4) // this box is not for collection
+        if (string.IsNullOrEmpty(CorrectObjectName) && m_AddedObjects.Count>=4) // this box is not for collection
             return;
         m_AddedObjects.Add(gmObj);
         CheckIfRowCollected();

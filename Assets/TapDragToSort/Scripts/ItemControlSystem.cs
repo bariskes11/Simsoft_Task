@@ -36,6 +36,7 @@ public class ItemControlSystem : MonoBehaviour
             SelectedGameObject = ClickedGameObject(out hitInfo);
             if (SelectedGameObject != null)
             {
+               
                 m_IsMouseDragging = true;
                 positionOfScreen = Camera.main.WorldToScreenPoint(SelectedGameObject.transform.position);
                 offsetValue = SelectedGameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, positionOfScreen.z));

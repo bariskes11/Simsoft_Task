@@ -13,6 +13,7 @@ public class Enums
 
     public enum TagNames
     { 
-    LandingPoint
+    LandingPoint,
+    Items
     }
 }
