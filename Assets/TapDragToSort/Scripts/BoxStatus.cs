@@ -11,16 +11,19 @@ public class BoxStatus : MonoBehaviour
     public ParticleSystem SuccesFX;
     // sets the object type to collect Red Green Or Blue
     public string CorrectObjectName;
+    //current items in the box
     public List<GameObject> m_AddedObjects = new List<GameObject>();
     //get if this box is completed
     public bool CompletedThisBox;
     public GameManager gm;
     private void Start()
     {
+
         gm = FindObjectOfType<GameManager>();
         // sets current added objects on this box
         CompletedThisBox = false;
         var rslt = this.GetComponentsInChildren<Item>();
+        //adds current objects to m_addedobjects
         if (rslt.Length > 0)
         {
             foreach (var item in rslt)
@@ -37,7 +40,7 @@ public class BoxStatus : MonoBehaviour
     }
     IEnumerator waitTimeOutAndStopMoving()
     {
-        yield return new WaitForSeconds(1F);
+        yield return new WaitForSeconds(0.1F);
         var childs = this.GetComponentsInChildren<Item>(); // current Items
         foreach (var item in childs)
         {
