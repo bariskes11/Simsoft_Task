@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 6344348700943477756}
   - component: {fileID: 5931679580754966113}
   - component: {fileID: 1174962174505471331}
-  m_Layer: 0
+  - component: {fileID: 7706131741458222484}
+  m_Layer: 2
   m_Name: Place4
   m_TagString: LandingPoint
   m_Icon: {fileID: 0}
@@ -60,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b874fcb4176d05b479e27abc3ce1175f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -94,6 +95,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e362aa1ebfb2664394cc1f048392377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HasObject: 0
+  currentGameObject: {fileID: 0}
+--- !u!65 &7706131741458222484
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228294724339620886}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 4.41, z: 1}
+  m_Center: {x: 0, y: 0, z: 0.00000011920929}
 --- !u!1 &844813216084088582
 GameObject:
   m_ObjectHideFlags: 0
@@ -106,7 +122,8 @@ GameObject:
   - component: {fileID: 891692725244267557}
   - component: {fileID: 2687382278169493514}
   - component: {fileID: 1944452173744841817}
-  m_Layer: 0
+  - component: {fileID: 4800095546926312778}
+  m_Layer: 2
   m_Name: Place2
   m_TagString: LandingPoint
   m_Icon: {fileID: 0}
@@ -154,7 +171,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b874fcb4176d05b479e27abc3ce1175f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -188,6 +205,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e362aa1ebfb2664394cc1f048392377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HasObject: 0
+  currentGameObject: {fileID: 0}
+--- !u!65 &4800095546926312778
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 844813216084088582}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 4.41, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3841733750291530623
 GameObject:
   m_ObjectHideFlags: 0
@@ -249,7 +281,8 @@ GameObject:
   - component: {fileID: 2190962451082405979}
   - component: {fileID: 2012292852330208135}
   - component: {fileID: 6859268410097764349}
-  m_Layer: 0
+  - component: {fileID: 945473709155497530}
+  m_Layer: 2
   m_Name: Place3
   m_TagString: LandingPoint
   m_Icon: {fileID: 0}
@@ -297,7 +330,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b874fcb4176d05b479e27abc3ce1175f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -331,6 +364,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e362aa1ebfb2664394cc1f048392377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HasObject: 0
+  currentGameObject: {fileID: 0}
+--- !u!65 &945473709155497530
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6099093677127558828}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 4.41, z: 1}
+  m_Center: {x: -0.00000011920929, y: 0, z: 0.00000011920929}
 --- !u!1 &6906528684402627008
 GameObject:
   m_ObjectHideFlags: 0
@@ -343,7 +391,8 @@ GameObject:
   - component: {fileID: 6001549709254115665}
   - component: {fileID: 845568504939867185}
   - component: {fileID: 5343509872664515518}
-  m_Layer: 0
+  - component: {fileID: 8513528127225200235}
+  m_Layer: 2
   m_Name: Place1
   m_TagString: LandingPoint
   m_Icon: {fileID: 0}
@@ -391,7 +440,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b874fcb4176d05b479e27abc3ce1175f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -425,6 +474,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e362aa1ebfb2664394cc1f048392377, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HasObject: 0
+  currentGameObject: {fileID: 0}
+--- !u!65 &8513528127225200235
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6906528684402627008}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 4.41, z: 1}
+  m_Center: {x: -0.00000011920929, y: 0, z: 0}
 --- !u!1 &6919695635122832096
 GameObject:
   m_ObjectHideFlags: 0

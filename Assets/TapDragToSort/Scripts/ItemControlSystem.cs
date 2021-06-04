@@ -4,19 +4,32 @@ using UnityEngine;
 
 public class ItemControlSystem : MonoBehaviour
 {
-    
-    GameObject getTarget;
-    bool isMouseDragging;
+    [Tooltip("Shows Current Selected GameObject")]
+    public GameObject SelectedGameObject;
+    // when player selected one object;
+    bool m_IsMouseDragging;
+    //offset between camera and currentgame object distance
     Vector3 offsetValue;
+    //to convert world to screen point.
     Vector3 positionOfScreen;
+    //keeping "y" at same value for  staying on platform.
+    private float offsetY = 1F;
 
-
-
+    [Tooltip("Shows Possible Placement Points")]
+    public GameObject[] PossibleLandingPoints;
+    [Tooltip("To Indicate Landing Points with different Color")] 
+    public Material LandingPointInticatorColor;
+    [Tooltip("Normal Landing Place PointColor")]
+    public Material LandingPointNormalColor;
 
     // Use this for initialization
     void Start()
     {
-
+        PossibleLandingPoints = GameObject.FindGameObjectsWithTag(Enums.TagNames.LandingPoint.ToString());
+        foreach (var item in PossibleLandingPoints)
+        {
+            item.GetComponent<MeshRenderer>().material = LandingPointNormalColor;
+        }
     }
 
     RaycastHit hitInfo;
@@ -26,32 +39,31 @@ public class ItemControlSystem : MonoBehaviour
         //Mouse Button Press Down
         if (Input.GetMouseButtonDown(0))
         {
-            getTarget = ClickedGameObject(out hitInfo);
-            if (getTarget != null)
+            SelectedGameObject = ClickedGameObject(out hitInfo);
+            if (SelectedGameObject != null)
             {
-                isMouseDragging = true;
-                positionOfScreen = Camera.main.WorldToScreenPoint(getTarget.transform.position);
-                offsetValue = getTarget.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, positionOfScreen.z));
+                m_IsMouseDragging = true;
+                positionOfScreen = Camera.main.WorldToScreenPoint(SelectedGameObject.transform.position);
+                offsetValue = SelectedGameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, positionOfScreen.z));
             }
         }
 
         //Mouse Button Up
         if (Input.GetMouseButtonUp(0))
         {
-            isMouseDragging = false;
+            m_IsMouseDragging = false;
         }
         //Is mouse Moving
-        if (isMouseDragging)
+        if (m_IsMouseDragging)
         {
             //tracking mouse position.
             Vector3 currentScreenSpace = new Vector3(Input.mousePosition.x, Input.mousePosition.y, positionOfScreen.z);
             Vector3 currentPosition = Camera.main.ScreenToWorldPoint(currentScreenSpace);
-            currentPosition.y = 1;
+
+            currentPosition.y = offsetY;
             //It will update target gameobject's current postion.
-            getTarget.transform.position = currentPosition;
+            SelectedGameObject.transform.position = currentPosition;
         }
-
-
     }
     Ray ray;
     GameObject ClickedGameObject(out RaycastHit hit)
@@ -68,6 +80,8 @@ public class ItemControlSystem : MonoBehaviour
         }
         return target;
     }
+
+
 
 
 }

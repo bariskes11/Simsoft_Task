@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class Placement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public bool HasObject;
+    public GameObject currentGameObject;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        //transform.GetComponentInChildren<>
     }
 }

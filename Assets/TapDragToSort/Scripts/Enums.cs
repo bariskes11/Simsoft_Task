@@ -10,4 +10,9 @@ public class Enums
     Green,
     Blue
     }
+
+    public enum TagNames
+    { 
+    LandingPoint
+    }
 }
