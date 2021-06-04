@@ -15,21 +15,29 @@ public class Placement : MonoBehaviour
     {
         //gets current box
         currentBox = this.GetComponentInParent<BoxStatus>();
+   
+
     }
     // if user gets close to this place adds the current object  to object list
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(other.gameObject.name);
         if (other.GetComponent<Item>() != null) // is this an Item
         {
-            currentBox.AddObject(other.gameObject);
+            
+                currentBox.AddObject(other.gameObject);
         }
-        
+
     }
+
+    
     private void OnTriggerExit(Collider other)
     {
-        if (other.GetComponent<Item>() != null) // is this an Item
+        Debug.Log("Leaved Trigger:"+other.gameObject.name);
+        if (other.GetComponent<Item>() != null ) // is this an Item
         {
             currentBox.RemoveObject(other.gameObject);
+           
         }
     }
 }
