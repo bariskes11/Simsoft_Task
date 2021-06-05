@@ -18,6 +18,8 @@ public class PlayerShootingSystem : MonoBehaviour
     public float MaxXAngle = 45;
     public float MaxPower = 100;
     private Image fillerImage;
+     
+
     private void Start()
     {
         fillerImage = ArrowFiller.GetComponent<Image>();
@@ -60,7 +62,7 @@ public class PlayerShootingSystem : MonoBehaviour
             float x = swipeDelta.x;
             float y = swipeDelta.y;
             Debug.Log("Swipe Direction x:" + x + " y:" + y);
-            float rotationz = -Mathf.Clamp(x, -MaxXAngle, MaxXAngle);
+            float rotationz = Mathf.Clamp(x, -MaxXAngle, MaxXAngle);
             
             Quaternion r = Quaternion.Euler(new Vector3(Arrow.transform.rotation.x, Arrow.transform.rotation.y, rotationz)); // rotates the arrow to swipped position
             currentDirection = new Vector3(Arrow.transform.rotation.x, Arrow.transform.rotation.y, rotationz);
@@ -81,4 +83,5 @@ public class PlayerShootingSystem : MonoBehaviour
         currentDirection = Vector3.zero;
         currentForce = 0;
     }
+    
 }
