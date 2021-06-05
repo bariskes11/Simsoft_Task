@@ -14,10 +14,11 @@ public class PlayerMovingSystem : MonoBehaviour
 
     public void  MovePlayer(Vector3 direction, float power)
     {
-        direction.x = direction.z;
-        direction.z = 1;
-        direction.y = 0;
-        rb.AddRelativeForce(direction * Mathf.Clamp(Mathf.Abs(power), 0, 10) , ForceMode.Impulse);
+        direction.x = 0;
+        direction.y =- direction.z;
+        direction.z = 0;
+        this.transform.Rotate(direction);
+       rb.AddForce(transform.forward * Mathf.Clamp(Mathf.Abs(power), 0, 100) , ForceMode.Impulse);
 
     }
 }
