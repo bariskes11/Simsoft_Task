@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerMovingSystem : MonoBehaviour
 {
     public float moveSpeed;
-    public float MaxSpeed=10F;
+    public float MaxSpeed=100;
     private Rigidbody rb;
     private void Start()
     {
@@ -18,7 +18,7 @@ public class PlayerMovingSystem : MonoBehaviour
         direction.y =- direction.z;
         direction.z = 0;
         this.transform.Rotate(direction);
-       rb.AddForce(transform.forward * Mathf.Clamp(Mathf.Abs(power), 0, 100) , ForceMode.Impulse);
+       rb.AddForce(transform.forward * Mathf.Clamp(Mathf.Abs(power), 0, MaxSpeed) , ForceMode.Impulse);
 
     }
 }
