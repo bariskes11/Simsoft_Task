@@ -12,9 +12,9 @@
         {
             var leaderboardProvider = new FakeLeaderboardProvider();
             var sortType = PlayerPrefs.GetInt("SortType", 0);
+            // dis class gets suitable dependency based on sorting type
             leaderBoardSystem = new LeaderBoardSystem(leaderBoard, sortType);
-            var rslt= leaderBoardSystem.IleaderBoard.Sort(leaderboardProvider);
-            return rslt;
+            return leaderBoardSystem.IleaderBoard.Sort(leaderboardProvider); 
         }
     }
 }
