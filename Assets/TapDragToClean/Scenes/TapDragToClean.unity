@@ -347,7 +347,7 @@ MonoBehaviour:
   baseMaterial: {fileID: 2100000, guid: 2d1ecbf1e18fa4c4e8113b71c877679d, type: 2}
   brushSize: 2.4
   brush: {fileID: 113140, guid: a83983ea0f7ea18439f8f8530dc1c8cc, type: 3}
-  brushColor: {r: 1, g: 0, b: 0, a: 1}
+  brushColor: {r: 1, g: 0.08018869, b: 0.08018869, a: 1}
 --- !u!4 &649232313
 Transform:
   m_ObjectHideFlags: 0

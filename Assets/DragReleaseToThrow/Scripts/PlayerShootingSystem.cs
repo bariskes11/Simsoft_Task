@@ -27,12 +27,13 @@ public class PlayerShootingSystem : MonoBehaviour
     }
     private void Update()
     {
-
+        //detect mouse start movement
         if (Input.GetMouseButtonDown(0))
         {
             isDragging = true;
             startTouch = Input.mousePosition;
         }
+        // detect mouse end movement
         else if (Input.GetMouseButtonUp(0))
         {
             isDragging = false;
@@ -78,6 +79,7 @@ public class PlayerShootingSystem : MonoBehaviour
     }
     public void Reset()
     {
+        // resets values to initial position when movement is done
         startTouch = swipeDelta = Vector2.zero;
         isDragging = false;
         currentDirection = Vector3.zero;
